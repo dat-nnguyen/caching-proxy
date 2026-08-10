@@ -1,0 +1,59 @@
+# Dependencies
+node_modules/
+jspm_packages/
+
+# Logs and Debug
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Environment and Secrets
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.env
+!.env.example
+
+# OS Metadata
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+ehthumbs.db
+
+# IDEs and Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+*.sublime-project
+*.sublime-workspace
+
+# Build and Output
+dist/
+build/
+out/
+*.tgz
+*.tar.gz
+
+# Testing and Coverage
+coverage/
+.nyc_output/
+
+# Caches and Temporary Files
+.cache/
+.npm/
+.eslintcache
+.stylelintcache
+*.pid
+*.seed
+*.pid.lock
