@@ -31,20 +31,17 @@ export function parseOptions(argv = process.argv) {
 
     const port = parseInt(options.port, 10);
     if (!options.port || isNaN(port) || port < 1024 || port > 65535) {
-        console.error("Invalid --port. Must be a number between 1024 and 65535.");
-        process.exit(1);
+        throw new Error("Invalid --port. Must be a number between 1024 and 65535.");
     } 
 
     if (!options.origin) {
-        console.error("Invalid --origin. Must be a valid URL.");
-        process.exit(1);
+        throw new Error("Invalid --origin. Must be a valid URL.");
     } 
 
     try {
         new URL(options.origin);
     } catch(error) {
-        console.error(`Invalid --origin: ${options.origin}. Must be a valid URL.`);
-        process.exit(1);
+        throw new Error(`Invalid --origin: ${options.origin}. Must be a valid URL.`);
     }
 
     return { port, origin: options.origin, clearCache: false };
