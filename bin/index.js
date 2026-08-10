@@ -6,6 +6,7 @@
 
 import { parseOptions } from '../src/cli/optionParser.js';
 import { createProxyServer } from '../src/server/proxyServer.js';
+import { cacheStore } from '../src/cache/cacheStore.js';
 
 /**
  * Main execution entrypoint for the CLI tool.
@@ -16,8 +17,9 @@ function main() {
         const options = parseOptions();
 
         if (options.clearCache) {
+            cacheStore.clear();
             console.log('Cache cleared successfully.');
-            return;
+            process.exit(0);
         }
 
         createProxyServer(options.port, options.origin);
